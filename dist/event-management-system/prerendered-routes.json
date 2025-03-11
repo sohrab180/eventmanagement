@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/",
+    "/dashboard",
+    "/dashboard/add-event",
+    "/dashboard/update-event",
+    "/dashboard/view-event",
+    "/register"
+  ]
+}

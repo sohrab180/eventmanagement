@@ -41,6 +41,10 @@ app.use((err, req, res, next) => {
     errorLogger(err, req, res, next);
 });
 
+
+app.get("/test",(req,res)=>{
+    res.status(200).send("Server running...")
+})
 // Start Server
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
