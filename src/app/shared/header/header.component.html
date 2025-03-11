@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+    <div class="container">
+        <!-- Logo -->
+       <img src="/logo1.png" alt="logo" height="50" width="200">
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <!-- Show Sign-in & Sign-up if NOT logged in -->
+                <ng-container *ngIf="!isLoggedIn">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">Sign-in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/register">Sign-up</a>
+                    </li>
+                </ng-container>
+
+                <!-- Show Dashboard & User Menu if Logged In -->
+                <ng-container *ngIf="isLoggedIn">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-primary" routerLink="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> {{ userName }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item">Profile</a></li>
+                            <li><a class="dropdown-item text-danger" (click)="logout()">Sign-out</a></li>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</nav>

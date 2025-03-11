@@ -1,0 +1,94 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #f8f9fa; /* Light background */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        text-align: center;
+    }
+    .sidebar ul {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+    .sidebar .nav-item {
+        margin: 0 10px;
+    }
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* 🔥 Active Tab Styling (Fix Applied) */
+.nav-link.active {
+    background: #0056b3 !important; /* Darker Blue */
+    color: white !important;
+    font-weight: bold;
+    box-shadow: inset 3px 0 0 #004494; /* Left Indicator */
+}
+
+/* Material Icons */
+.material-icons {
+    font-size: 20px;
+}
+
+/* Background image and overlay */
+.content {
+    position: relative;
+    background: url('/event.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.502); /* Overlay effect */
+    z-index: 1;
+}
+.head{
+    --bs-text-opacity: 1;
+    color: rgb(15 14 14) !important;
+    background: white;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    top: 0px;
+    padding: 15px;
+}

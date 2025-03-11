@@ -1,0 +1,56 @@
+
+<div class="position-relative z-2 p-4">
+    <div class="row justify-content-center">
+        <div class="card-fixed">
+    <div class="container-fluid px-5 position-relative z-2">
+        <div class="row">
+            <div class="col-12">
+                <div *ngIf="alertMessage" class="alert alert-{{ alertType }}" role="alert">
+                    {{ alertMessage }}
+                  </div>
+            </div>
+    
+        </div>
+    </div>
+    <h2 class="text-center text-primary">Update Event </h2>
+    <form class="shadow-sm p-4 rounded" [formGroup]="eventForm" (ngSubmit)="updateForm()">
+        <mat-form-field class="w-100">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Enter event name" formControlName="title">
+            <mat-error *ngIf="eventForm.get('title')?.invalid && eventForm.get('title')?.touched">
+                {{ getError('title') }}
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="w-100">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter event description"
+                formControlName="description"></textarea>
+            <mat-error
+                *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched">
+                {{ getError('description') }}
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="w-100">
+            <mat-label>Date</mat-label>
+            <input matInput type="date" formControlName="date">
+            <mat-error *ngIf="eventForm.get('date')?.invalid && eventForm.get('date')?.touched">
+                {{ getError('date') }}
+            </mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="w-100">
+            <mat-label>Location</mat-label>
+            <input matInput placeholder="Enter event location" formControlName="location">
+            <mat-error *ngIf="eventForm.get('location')?.invalid && eventForm.get('location')?.touched">
+                {{ getError('location') }}
+            </mat-error>
+        </mat-form-field>
+    
+        <button mat-raised-button color="primary float-end" type="submit"
+            [disabled]="eventForm.invalid">Update</button>
+    </form>
+    </div>
+    </div>
+</div>

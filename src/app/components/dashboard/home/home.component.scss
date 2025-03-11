@@ -1,0 +1,51 @@
+.icon-wrapper {
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 24px;
+  }
+  .head{
+    --bs-text-opacity: 1;
+    color: rgb(15 14 14) !important;
+    background: white;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    top: 0px;
+    padding: 15px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    max-height: 400px; /* Optional: Restrict max height */
+    position: relative;
+}
+
+/* Add scrollbar only for small screens */
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: #007bff #f1f1f1;
+    }
+
+    /* Custom scrollbar for Webkit (Chrome, Safari) */
+    .table-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+        background: #007bff;
+        border-radius: 4px;
+    }
+
+    .table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+}
+
+  
