@@ -23,11 +23,13 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: '*', // Allow all origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    optionsSuccessStatus: 200
+    origin: ['http://localhost:4200', 'https://your-frontend-domain.vercel.app'], // Add allowed domains
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+// Handle Preflight Requests for All Routes
+app.options('*', cors());
 // Routes
 app.use(`${API_PREFIX}/users`, userRoutes);
 app.use(`${API_PREFIX}/event-managemnet`, eventRoutes);

@@ -5,7 +5,7 @@ const connectDB = async () => {
     try {
         console.log('Connecting database...');
          mongoose.set('strictQuery', true);
-        await mongoose.connect(process.env.CONNECTION_STRING, {
+        await mongoose.connect(process.env.CONNECTION_STRING || 'mongodb+srv://sohrabali180:JekWxT4NqHahIPmG@cluster0.c9lvv.mongodb.net/eventmanagement?retryWrites=true&w=majority&appName=Cluster0', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             serverSelectionTimeoutMS: 100000,

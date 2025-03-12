@@ -8,7 +8,8 @@ import { isPlatformBrowser } from '@angular/common';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/v1/users/login';
+  // private apiUrl = 'http://localhost:3000/api/v1/users/login';
+  private apiUrl = 'https://eventmanagement-backend-7opvqwzp2-sohrab180s-projects.vercel.app/api/v1/users/login';
   
   private authState = new BehaviorSubject<boolean>(false);
   authState$ = this.authState.asObservable();
