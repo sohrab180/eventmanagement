@@ -79,7 +79,6 @@ export class HomeComponent {
       if (result.isConfirmed) {
         this.eventService.deleteEvent(id).subscribe({
           next: (res) => {
-            console.log('Deleted successfully:', res);
             Swal.fire('Deleted!', 'The event has been deleted.', 'success');
             this.getData()
           },

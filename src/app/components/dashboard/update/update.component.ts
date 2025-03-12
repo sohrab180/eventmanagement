@@ -42,7 +42,6 @@ export class UpdateComponent {
     });
   
     this.route.queryParams.subscribe(params => {
-      console.log("Received Event Data:", params);
       this.Id=params['id']; 
   
       // Clone the params object to avoid modifying the read-only object
@@ -82,7 +81,6 @@ updateForm() {
 
   this.eventService.updateEvent(this.Id, this.eventForm.value).subscribe({
     next: (response) => {
-      console.log("Update successful:", response);
       this.alertMessage = '✅ Event updated successfully!';
       this.alertType = 'success';
       

@@ -52,7 +52,7 @@ export class CreateComponent {
 
   submitForm(): void {
     if (this.eventForm.valid) {
-      console.log('Event Data:', this.eventForm.value);
+
   
       this.eventService.createEvent(this.eventForm.value).subscribe({
         next: (response) => {
