@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EventManagementService {
-  // private baseUrl = 'http://localhost:3000/api/v1/event-managemnet/events';
-  private baseUrl = 'https://eventmanagement-backend-7opvqwzp2-sohrab180s-projects.vercel.app//api/v1/event-managemnet/events';
+  private baseUrl = 'http://localhost:3000/api/v1/event-managemnet/events';
+  // private baseUrl = 'https://eventmanagement-backend-1w4ylazy3-sohrab180s-projects.vercel.app/api/v1/event-managemnet/events';
   
 
   constructor(private http: HttpClient) {}
